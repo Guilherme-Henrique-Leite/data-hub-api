@@ -1,0 +1,69 @@
+[project]
+name = "data-hub-api"
+version = "0.1.0"
+description = "API para distribuição de dados da Pesquisa Industrial Anual"
+authors = [
+    {name = "Guilherme Albuquerque",email = "guilherme.hlalbuquerque@gmail.com"}
+]
+readme = "README.md"
+requires-python = "^3.11"
+dependencies = [
+    "fastapi (>=0.115.11,<0.116.0)",
+    "uvicorn[standard] (>=0.34.0,<0.35.0)",
+    "sqlalchemy (>=2.0.39,<3.0.0)",
+    "alembic (>=1.15.1,<2.0.0)",
+    "python-jose[cryptography] (>=3.4.0,<4.0.0)",
+    "passlib[bcrypt] (>=1.7.4,<2.0.0)",
+    "python-multipart (>=0.0.20,<0.0.21)",
+    "redis (>=5.2.1,<6.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "pydantic[email] (>=2.10.6,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "black (>=25.1.0,<26.0.0)"
+]
+
+[tool.poetry]
+name = "data-hub-api"
+version = "0.1.0"
+description = "API para distribuição de dados da Pesquisa Industrial Anual"
+authors = ["Guilherme Albuquerque <guilherme.hlalbuquerque@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.115.11"
+uvicorn = {extras = ["standard"], version = "^0.34.0"}
+sqlalchemy = "^2.0.39"
+alembic = "^1.15.1"
+python-jose = {extras = ["cryptography"], version = "^3.4.0"}
+passlib = {extras = ["bcrypt"], version = "^1.7.4"}
+python-multipart = "^0.0.20"
+redis = "^5.2.1"
+psycopg2-binary = "^2.9.10"
+pydantic = {extras = ["email"], version = "^2.10.6"}
+python-dotenv = "^1.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+httpx = "^0.28.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+flake8 = "^7.1.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
